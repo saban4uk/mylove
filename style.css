@@ -1,0 +1,55 @@
+/* Градиентный фон с анимацией */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #ff758c, #ff7eb3, #ff97a6, #ffb6c1);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    overflow: hidden;
+}
+
+/* Анимация градиента */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Контейнер */
+.content {
+    text-align: center;
+}
+
+/* Красивый текст с неоновым свечением */
+.love-text {
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4, 0 0 30px #ff1493;
+    font-family: 'Pacifico', cursive;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Анимация свечения */
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff69b4; }
+    to { text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4, 0 0 40px #ff1493; }
+}
+
+/* Анимация падающих сердечек */
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    color: pink;
+    font-size: 24px;
+    animation: fall 5s linear infinite;
+}
